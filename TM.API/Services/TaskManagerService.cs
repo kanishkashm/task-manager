@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using TM.API.Repositories;
+﻿using TM.API.Repositories;
 
 namespace TM.API.Services
 {
@@ -51,7 +50,6 @@ namespace TM.API.Services
             for (var i = 0; i < duration; i++)
             {
                 var date = startDate.AddDays(i);
-                var a = holidays.Any(x => x == date);
                 if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday || holidays.Any(x => x == date))
                 {
                     count++;
