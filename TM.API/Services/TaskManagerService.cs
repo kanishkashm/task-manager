@@ -1,4 +1,6 @@
-﻿using TM.API.Repositories;
+﻿using Microsoft.OpenApi.Validations;
+using TM.API.Entities;
+using TM.API.Repositories;
 
 namespace TM.API.Services
 {
@@ -31,7 +33,6 @@ namespace TM.API.Services
             }
             var holidays = (await _holidayRepo.GetHolidays()).Select(x => x.Date).ToList();
 
-
             var duration = numOfDaysNeeded;
             var completionDate = startDate;
             while (duration > 0)
@@ -42,6 +43,12 @@ namespace TM.API.Services
             }
 
             return completionDate.AddDays(-1);
+        }
+
+        public async Task<List<Adds>> GetAdds()
+        {
+            var adds = (await _holidayRepo.GetAdds()).ToList();
+            return adds;
         }
 
         private int NumberOfWeekendsAndHolidays(DateOnly startDate, int duration, List<DateOnly> holidays)

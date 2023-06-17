@@ -17,5 +17,11 @@ namespace TM.API.Repositories
             var holidays = await _context.Holidays.Find(p => true).ToListAsync();
             return holidays;
         }
+
+        public async Task<List<Adds>> GetAdds()
+        {
+            var adds = await _context.Addsss.Find(p => true).ToListAsync();
+            return adds;
+        }
     }
 }

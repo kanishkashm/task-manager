@@ -16,4 +16,18 @@ namespace TM.API.Entities
         //[BsonElement("Descrition")]
         public string Descrition { get; set; }
     }
+
+    public class Adds
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
+        [BsonElement("UserId")]
+        public string UserId { get; set; }
+
+
+        //[BsonElement("Descrition")]
+        public string Title { get; set; }
+    }
 }

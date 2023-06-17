@@ -6,5 +6,6 @@ namespace TM.API.Data
     public interface ITaskManagerContext
     {
         IMongoCollection<Holiday> Holidays { get; set; }
+        IMongoCollection<Adds> Addsss { get; set; }
     }
 }

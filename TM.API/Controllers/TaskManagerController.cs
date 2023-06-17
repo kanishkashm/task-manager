@@ -23,5 +23,12 @@ namespace TM.API.Controllers
             var completionDate = await _taskManagerService.GetTaskCompletionDate(startDateStr, numOfDaysNeeded);
             return Ok(completionDate);
         }
+
+        [HttpGet("adds")]
+        public async Task<ActionResult> adds()
+        {
+            var adds = await _taskManagerService.GetAdds();
+            return Ok(adds);
+        }
     }
 }
